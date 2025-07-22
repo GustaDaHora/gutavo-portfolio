@@ -49,7 +49,10 @@ export default function Portfolio() {
               a passion for innovation.
             </p>
             <div className="flex flex-wrap gap-4 pt-4">
-              <Button asChild className="relative overflow-hidden group bg-gradient-to-r from-green-500 to-emerald-500 border-0 rounded-[10px]">
+              <Button
+                asChild
+                className="relative overflow-hidden group bg-gradient-to-r from-green-500 to-emerald-500 border-0 rounded-[10px]"
+              >
                 <Link href="#projects">
                   <span className="relative z-10 flex items-center">
                     View Projects{" "}
@@ -63,9 +66,7 @@ export default function Portfolio() {
                 variant="outline"
                 className="border-zinc-700 text-emerald-500 hover:text-emerald-700 hover:border-zinc-500 bg-transparent rounded-[10px]"
               >
-                <Link href="#contact">
-                  Contact Me
-                </Link>
+                <Link href="#contact">Contact Me</Link>
               </Button>
             </div>
             <div className="flex gap-4 pt-4">
@@ -196,7 +197,7 @@ export default function Portfolio() {
                   </div>
                 </div>
 
-                <div className="mt-8" >
+                <div className="mt-8">
                   <Button className="bg-zinc-800 hover:bg-zinc-700 text-white rounded-[10px]">
                     Download Resume
                   </Button>
@@ -270,9 +271,16 @@ export default function Portfolio() {
             <ProjectCard
               title="X parody"
               description="A parody website inspired by X (formerly Twitter)"
-              tags={["Supabase", "Prisma", "Postgres", "Next.js", "TypeScript", "Tailwind CSS"]}
+              tags={[
+                "Supabase",
+                "Prisma",
+                "Postgres",
+                "Next.js",
+                "TypeScript",
+                "Tailwind CSS",
+              ]}
               image="/xitter.png?height=400&width=600"
-              demoUrl="https://example.com"
+              demoUrl="https://xiter.vercel.app"
               repoUrl="https://github.com/GustaDaHora"
             />
             <ProjectCard
@@ -280,8 +288,8 @@ export default function Portfolio() {
               description="This portfolio website built with Next.js and Tailwind CSS."
               tags={["Next.js", "Tailwind CSS", "TypeScript"]}
               image="/portifolio.png?height=400&width=600"
-              demoUrl="https://example.com"
-              repoUrl="https://github.com"
+              demoUrl="https://gustavo-dahora.vercel.app"
+              repoUrl="https://github.com/GustaDaHora/gutavo-portfolio"
             />
           </div>
         </div>
