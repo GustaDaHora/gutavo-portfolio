@@ -135,27 +135,7 @@ export default function Portfolio() {
             subtitle="My background and journey"
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mt-16">
-            <div className="relative">
-              <div className="absolute -inset-4 rounded-xl bg-gradient-to-r from-green-500/20 to-cyan-500/20 blur-xl opacity-70"></div>
-              <div className="relative aspect-square rounded-xl overflow-hidden border border-zinc-800">
-                <img
-                  src="/placeholder.svg?height=600&width=600"
-                  alt="Gustavo Garcia da Hora"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-                <div className="absolute bottom-0 left-0 w-full p-6">
-                  <div className="flex items-center gap-2">
-                    <div className="w-3 h-3 rounded-full bg-green-500 animate-pulse"></div>
-                    <span className="text-sm font-medium">
-                      Available for work
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
+          <div className="grid items-center mt-16">
             <div className="space-y-6">
               <GlassmorphicCard>
                 <p className="text-lg text-zinc-300">
@@ -198,9 +178,17 @@ export default function Portfolio() {
                 </div>
 
                 <div className="mt-8">
-                  <Button className="bg-zinc-800 hover:bg-zinc-700 text-white rounded-[10px]">
-                    Download Resume
-                  </Button>
+                  <a
+                    href="/GustavoResume.pdf"
+                    download
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block"
+                  >
+                    <Button className="bg-zinc-800 hover:bg-zinc-700 text-white rounded-[10px]">
+                      Download Resume
+                    </Button>
+                  </a>
                 </div>
               </GlassmorphicCard>
             </div>
@@ -381,7 +369,7 @@ export default function Portfolio() {
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-emerald-600">
                 Gustavo
               </span>
-              <span className="text-white">da Hora</span>
+              <span className="text-white"> da Hora</span>
             </Link>
             <p className="text-sm text-zinc-500 mt-2">
               © {new Date().getFullYear()} Gustavo Garcia da Hora. All rights
