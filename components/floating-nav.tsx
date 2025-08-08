@@ -55,7 +55,7 @@ export function FloatingNav() {
           {isMobile ? (
             <div className="relative flex items-center justify-between">
               <Link href="/" className="font-bold text-lg">
-                <span className="bg-gradient-to-r from-green-400 to-emerald-600">
+                <span className="bg-gradient-to-r from-green-400 to-emerald-600 bg-clip-text inline-block text-transparent">
                   Gustavo
                 </span>
                 <span className="text-white">GH</span>
