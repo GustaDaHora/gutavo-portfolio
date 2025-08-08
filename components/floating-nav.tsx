@@ -76,7 +76,7 @@ export function FloatingNav() {
           ) : (
             <div className="relative flex items-center gap-1">
               <Link href="/" className="font-bold text-lg mr-4">
-                <span className="bg-gradient-to-r from-green-400 to-emerald-600">
+                <span className="text-green-400">
                   Gustavo
                 </span>
                 <span className="text-white">GH</span>
