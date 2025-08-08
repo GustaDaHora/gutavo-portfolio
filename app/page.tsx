@@ -366,7 +366,7 @@ export default function Portfolio() {
         <div className="container flex flex-col md:flex-row justify-between items-center gap-6">
           <div>
             <Link href="/" className="font-bold text-xl">
-              <span className="bg-clip-text bg-gradient-to-r from-green-400 to-emerald-600">
+              <span className="bg-gradient-to-r from-green-400 to-emerald-600">
                 Gustavo
               </span>
               <span className="text-white"> da Hora</span>
