@@ -1,10 +1,10 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
 
 interface SkillBadgeProps {
-  name: string
-  level: number
+  name: string;
+  level: number;
 }
 
 export function SkillBadge({ name, level }: SkillBadgeProps) {
@@ -26,9 +26,8 @@ export function SkillBadge({ name, level }: SkillBadgeProps) {
             <motion.div
               className="absolute top-0 left-0 h-full bg-gradient-to-r from-green-500 to-emerald-500 rounded-full"
               initial={{ width: 0 }}
-              whileInView={{ width: `${level}%` }}
+              animate={{ width: `${level}%` }}
               transition={{ duration: 1, delay: 0.2 }}
-              viewport={{ once: true }}
             />
           </div>
 
@@ -36,5 +35,5 @@ export function SkillBadge({ name, level }: SkillBadgeProps) {
         </div>
       </div>
     </motion.div>
-  )
+  );
 }
