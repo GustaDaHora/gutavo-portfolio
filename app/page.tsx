@@ -13,7 +13,6 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { ProjectCard } from "@/components/project-card";
 import { SkillBadge } from "@/components/skill-badge";
-import { Timeline } from "@/components/timeline";
 import { ContactForm } from "@/components/contact-form";
 import { CreativeHero } from "@/components/creative-hero";
 import { FloatingNav } from "@/components/floating-nav";
@@ -83,7 +82,7 @@ export default function Portfolio() {
                 </div>
               </div>
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight">
-                <span className="block">Hi, I'm</span>
+                <span className="block">Hi, I&apos;m</span>
                 <span className="text-green-400 bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text">
                   Gustavo da Hora
                 </span>
@@ -187,19 +186,19 @@ export default function Portfolio() {
             <GlassmorphicCard>
               <div className="space-y-4 sm:space-y-6">
                 <p className="text-base sm:text-lg text-zinc-300 leading-relaxed">
-                  I'm a passionate software engineer with experience building
+                  I&apos;m a passionate software engineer with experience building
                   web applications and digital products. I specialize in
-                  frontend development with React and Next.js, but I'm also
+                  frontend development with React and Next.js, but I&apos;m also
                   comfortable working with backend technologies.
                 </p>
                 <p className="text-base sm:text-lg text-zinc-300 leading-relaxed">
                   My journey in tech started with a strong foundation in
-                  software development. I've worked with various companies to
+                  software development. I&apos;ve worked with various companies to
                   create intuitive, performant, and accessible digital
                   experiences.
                 </p>
                 <p className="text-base sm:text-lg text-zinc-300 leading-relaxed">
-                  When I'm not coding, you can find me exploring new
+                  When I&apos;m not coding, you can find me exploring new
                   technologies, contributing to open-source projects, and
                   staying up-to-date with the latest industry trends.
                 </p>
@@ -393,7 +392,7 @@ export default function Portfolio() {
         </div>
 
         <div className="container max-w-5xl mx-auto relative z-10">
-          <SectionHeading title="Get In Touch" subtitle="Let's work together" />
+          <SectionHeading title="Get In Touch" subtitle="Let&apos;s work together" />
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start mt-12 sm:mt-16">
             <GlassmorphicCard>
