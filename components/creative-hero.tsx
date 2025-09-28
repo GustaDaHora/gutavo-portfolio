@@ -97,6 +97,7 @@ export function CreativeHero() {
       }
 
       draw() {
+        if (!ctx) return
         ctx.fillStyle = this.color
         ctx.beginPath()
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2)
@@ -107,10 +108,12 @@ export function CreativeHero() {
 
     // Create particle grid
     const particlesArray: Particle[] = []
-    const particleCount = 1000
     const gridSize = 30
 
     function init() {
+      // Null checks for canvas and ctx
+      if (!canvas || !ctx) return
+
       particlesArray.length = 0
 
       const canvasWidth = canvas.width / devicePixelRatio
@@ -132,6 +135,8 @@ export function CreativeHero() {
 
     // Animation loop
     const animate = () => {
+      if (!ctx || !canvas) return // Null checks
+
       ctx.clearRect(0, 0, canvas.width, canvas.height)
 
       // Smooth mouse following
@@ -176,12 +181,16 @@ export function CreativeHero() {
 
   return (
     <motion.div
-      className="w-full h-[400px] md:h-[500px] relative"
+      className="w-full h-[400px] md:h-[500px] flex items-center justify-center relative"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
     >
-      <canvas ref={canvasRef} className="w-full h-full" style={{ display: "block" }} />
+      <canvas
+        ref={canvasRef}
+        className="w-full h-full max-w-4xl max-h-[500px] mx-auto"
+        style={{ display: "block" }}
+      />
     </motion.div>
   )
 }
