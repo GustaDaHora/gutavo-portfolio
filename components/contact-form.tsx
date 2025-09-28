@@ -45,7 +45,7 @@ export function ContactForm() {
       setTimeout(() => {
         setIsSubmitted(false)
       }, 10000) // Reset after 10 seconds
-    } catch (err) {
+    } catch {
       toast({
         title: "Error",
         description: "There was a problem sending your message.",
@@ -77,7 +77,7 @@ export function ContactForm() {
               </motion.div>
               <h3 className="mb-2 text-2xl font-bold">Message Sent!</h3>
               <p className="text-zinc-300">
-                Thanks for reaching out. I'll get back to you soon.
+                Thanks for reaching out. I&apos;ll get back to you soon.
               </p>
             </div>
           ) : (
