@@ -35,11 +35,19 @@ export function CreativeHero() {
     let targetX = 0
     let targetY = 0
 
-    window.addEventListener("mousemove", (e) => {
-      const rect = canvas.getBoundingClientRect()
-      targetX = e.clientX - rect.left
-      targetY = e.clientY - rect.top
-    })
+    // Throttled mouse move handler
+    let lastMouseUpdate = 0
+    const handleMouseMove = (e: MouseEvent) => {
+      const now = Date.now()
+      if (now - lastMouseUpdate > 16) { // ~60fps input sampling is sufficient
+        const rect = canvas.getBoundingClientRect()
+        targetX = e.clientX - rect.left
+        targetY = e.clientY - rect.top
+        lastMouseUpdate = now
+      }
+    }
+
+    window.addEventListener("mousemove", handleMouseMove)
 
     // Particle class
     class Particle {
@@ -108,7 +116,7 @@ export function CreativeHero() {
 
     // Create particle grid
     const particlesArray: Particle[] = []
-    const gridSize = 30
+    const gridSize = 40 // Increased from 30 to reduce particle count
 
     function init() {
       // Null checks for canvas and ctx
@@ -133,8 +141,20 @@ export function CreativeHero() {
 
     init()
 
-    // Animation loop
-    const animate = () => {
+    // Animation loop with FPS limit
+    let animationFrameId: number
+    let lastTime = 0
+    const fps = 30
+    const interval = 1000 / fps
+
+    const animate = (currentTime: number) => {
+      animationFrameId = requestAnimationFrame(animate)
+
+      const deltaTime = currentTime - lastTime
+      if (deltaTime < interval) return
+
+      lastTime = currentTime - (deltaTime % interval)
+
       if (!ctx || !canvas) return // Null checks
 
       ctx.clearRect(0, 0, canvas.width, canvas.height)
@@ -164,11 +184,9 @@ export function CreativeHero() {
           }
         }
       }
-
-      requestAnimationFrame(animate)
     }
 
-    animate()
+    animate(0)
 
     // Handle window resize
     window.addEventListener("resize", init)
@@ -176,6 +194,8 @@ export function CreativeHero() {
     return () => {
       window.removeEventListener("resize", setCanvasDimensions)
       window.removeEventListener("resize", init)
+      window.removeEventListener("mousemove", handleMouseMove)
+      cancelAnimationFrame(animationFrameId)
     }
   }, [])
 
