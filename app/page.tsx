@@ -1,3 +1,4 @@
+
 "use client";
 import Link from "next/link";
 import {
@@ -16,6 +17,7 @@ import { SkillBadge } from "@/components/skill-badge";
 import { ContactForm } from "@/components/contact-form";
 import { CreativeHero } from "@/components/creative-hero";
 import { FloatingNav } from "@/components/floating-nav";
+import { TopNav } from "@/components/top-nav";
 import { MouseFollower } from "@/components/mouse-follower";
 import { ScrollProgress } from "@/components/scroll-progress";
 import { SectionHeading } from "@/components/section-heading";
@@ -35,17 +37,17 @@ export default function Portfolio() {
   }, []);
 
   const skills = [
+    { name: "HTML/CSS", level: 95 },
+    { name: "Tailwind CSS", level: 90 },
     { name: "JavaScript", level: 90 },
     { name: "TypeScript", level: 85 },
+    { name: "Rust", level: 60 },
+    { name: "Python", level: 50 },
     { name: "React", level: 95 },
     { name: "Next.js", level: 90 },
     { name: "Node.js", level: 80 },
-    { name: "HTML/CSS", level: 95 },
-    { name: "Tailwind CSS", level: 90 },
-    { name: "Python", level: 50 },
     { name: "PostgreSQL", level: 70 },
     { name: "Linux", level: 85 },
-    { name: "Docker", level: 60 },
     { name: "Git", level: 85 },
   ];
 
@@ -60,6 +62,7 @@ export default function Portfolio() {
     <div className="min-h-screen bg-gradient-to-b from-zinc-950 to-black text-white overflow-hidden">
       {!isMobile && <MouseFollower />}
       <ScrollProgress />
+      <TopNav />
       <FloatingNav />
 
       {/* Hero Section */}
@@ -298,11 +301,10 @@ export default function Portfolio() {
                   <button
                     key={i}
                     onClick={() => setSkillPage(i)}
-                    className={`w-2 h-2 rounded-full transition-all ${
-                      i === skillPage
-                        ? "bg-green-500 w-8"
-                        : "bg-zinc-600 hover:bg-zinc-500"
-                    }`}
+                    className={`w-2 h-2 rounded-full transition-all ${i === skillPage
+                      ? "bg-green-500 w-8"
+                      : "bg-zinc-600 hover:bg-zinc-500"
+                      }`}
                   />
                 ))}
               </div>
@@ -355,6 +357,22 @@ export default function Portfolio() {
               repoUrl="https://github.com/GustaDaHora"
             />
             <ProjectCard
+              title="Clareza"
+              description="An intelligent text editor with integrated AI, powered by Google Gemini CLI."
+              tags={["Tauri", "TypeScript", "Rust"]}
+              image="/clareza.png?height=400&width=600"
+              demoUrl="https://github.com/GustaDaHora/Clareza/releases"
+              repoUrl="https://github.com/GustaDaHora/Clareza"
+            />
+            <ProjectCard
+              title="Client-Side Neural TTS"
+              description="A purely client-side Text-to-Speech application using Sherpa-ONNX WebAssembly."
+              tags={["WebAssembly", "Sherpa-ONNX", "TypeScript"]}
+              image="/tts.png?height=400&width=600"
+              demoUrl="https://tts-app-psi.vercel.app/"
+              repoUrl="https://github.com/GustaDaHora/Neural-TTS"
+            />
+            <ProjectCard
               title="X parody"
               description="A parody website inspired by X (formerly Twitter)"
               tags={[
@@ -372,7 +390,7 @@ export default function Portfolio() {
             <ProjectCard
               title="Portfolio Website"
               description="This portfolio website built with Next.js and Tailwind CSS."
-              tags={["Next.js", "Tailwind CSS", "TypeScript"]}
+              tags={["Next.js", "Rust", "TypeScript"]}
               image="/portifolio.png?height=400&width=600"
               demoUrl="https://gustavo-dahora.vercel.app"
               repoUrl="https://github.com/GustaDaHora/gutavo-portfolio"
