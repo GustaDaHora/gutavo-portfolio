@@ -48,19 +48,22 @@ export function ProjectCard({ title, description, tags, image, demoUrl, repoUrl 
             />
           </div>
 
-          <div className="p-6 flex-grow">
-            <h3 className="text-xl font-bold mb-2">{title}</h3>
-            <p className="text-zinc-400 mb-4">{description}</p>
+          <div className="p-6 flex-grow relative">
+            <Link href={demoUrl} target="_blank" rel="noopener noreferrer" className="absolute inset-0 z-10">
+              <span className="sr-only">View Project</span>
+            </Link>
+            <h3 className="text-xl font-bold mb-2 relative z-0">{title}</h3>
+            <p className="text-zinc-400 mb-4 relative z-0">{description}</p>
 
-            <div className="flex flex-wrap gap-2 mb-6">
+            <div className="flex flex-wrap gap-2 mb-6 relative z-10 pointer-events-none">
               {tags.map((tag, index) => (
-                <Badge key={index} variant="secondary" className="bg-zinc-700/50 hover:bg-zinc-700 text-zinc-300">
+                <Badge key={index} variant="secondary" className="bg-zinc-700/50 hover:bg-zinc-700 text-zinc-300 pointer-events-auto">
                   {tag}
                 </Badge>
               ))}
             </div>
 
-            <div className="flex justify-between mt-auto pt-4 border-t border-zinc-700/50">
+            <div className="flex justify-between mt-auto pt-4 border-t border-zinc-700/50 relative z-20">
               <Button variant="ghost" size="sm" className="text-zinc-400 hover:text-white hover:bg-zinc-700/50" asChild>
                 <Link href={repoUrl} target="_blank" rel="noopener noreferrer">
                   <Github className="mr-2 h-4 w-4" />
