@@ -1,4 +1,3 @@
-
 "use client";
 import Link from "next/link";
 import {
@@ -55,7 +54,7 @@ export default function Portfolio() {
   const totalPages = Math.ceil(skills.length / itemsPerPage);
   const currentSkills = skills.slice(
     skillPage * itemsPerPage,
-    (skillPage + 1) * itemsPerPage
+    (skillPage + 1) * itemsPerPage,
   );
 
   return (
@@ -189,15 +188,15 @@ export default function Portfolio() {
             <GlassmorphicCard>
               <div className="space-y-4 sm:space-y-6">
                 <p className="text-base sm:text-lg text-zinc-300 leading-relaxed">
-                  I&apos;m a passionate software engineer with experience building
-                  web applications and digital products. I specialize in
-                  frontend development with React and Next.js, but I&apos;m also
-                  comfortable working with backend technologies.
+                  I&apos;m a passionate software engineer with experience
+                  building web applications and digital products. I specialize
+                  in frontend development with React and Next.js, but I&apos;m
+                  also comfortable working with backend technologies.
                 </p>
                 <p className="text-base sm:text-lg text-zinc-300 leading-relaxed">
                   My journey in tech started with a strong foundation in
-                  software development. I&apos;ve worked with various companies to
-                  create intuitive, performant, and accessible digital
+                  software development. I&apos;ve worked with various companies
+                  to create intuitive, performant, and accessible digital
                   experiences.
                 </p>
                 <p className="text-base sm:text-lg text-zinc-300 leading-relaxed">
@@ -301,10 +300,11 @@ export default function Portfolio() {
                   <button
                     key={i}
                     onClick={() => setSkillPage(i)}
-                    className={`w-2 h-2 rounded-full transition-all ${i === skillPage
-                      ? "bg-green-500 w-8"
-                      : "bg-zinc-600 hover:bg-zinc-500"
-                      }`}
+                    className={`w-2 h-2 rounded-full transition-all ${
+                      i === skillPage
+                        ? "bg-green-500 w-8"
+                        : "bg-zinc-600 hover:bg-zinc-500"
+                    }`}
                   />
                 ))}
               </div>
@@ -341,12 +341,26 @@ export default function Portfolio() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 sm:gap-8 mt-12 sm:mt-16">
             <ProjectCard
-              title="Website Synergy"
-              description="A landing page for a solar energy company"
+              title="ProvaIA"
+              description="A study plataform with AI integration"
+              tags={[
+                "Next.js",
+                "TypeScript",
+                "Tailwind CSS",
+                "AI integration",
+                "API usage",
+              ]}
+              image="/provaia.png?height=400&width=600"
+              demoUrl="https://provaia.vercel.app/"
+              repoUrl="https://github.com/GustaDaHora"
+            />
+            <ProjectCard
+              title="Website Assobase"
+              description="A landing page for a agricultural energy company"
               tags={["Next.js", "TypeScript", "Tailwind CSS"]}
-              image="/synergy.png?height=400&width=600"
-              demoUrl="https://synergywebsite.vercel.app/"
-              repoUrl="https://github.com/GustaDaHora/simulador"
+              image="/assobase.png?height=400&width=600"
+              demoUrl="https://assobase.org/"
+              repoUrl="https://github.com/GustaDaHora"
             />
             <ProjectCard
               title="Star Up Website"
@@ -373,21 +387,6 @@ export default function Portfolio() {
               repoUrl="https://github.com/GustaDaHora/Neural-TTS"
             />
             <ProjectCard
-              title="X parody"
-              description="A parody website inspired by X (formerly Twitter)"
-              tags={[
-                "Supabase",
-                "Prisma",
-                "Postgres",
-                "Next.js",
-                "TypeScript",
-                "Tailwind CSS",
-              ]}
-              image="/xitter.png?height=400&width=600"
-              demoUrl="https://xiter.vercel.app"
-              repoUrl="https://github.com/GustaDaHora"
-            />
-            <ProjectCard
               title="Portfolio Website"
               description="This portfolio website built with Next.js and Tailwind CSS."
               tags={["Next.js", "Rust", "TypeScript"]}
@@ -410,7 +409,7 @@ export default function Portfolio() {
         </div>
 
         <div className="container max-w-5xl mx-auto relative z-10">
-          <SectionHeading title="Get In Touch" subtitle="Let&apos;s work together" />
+          <SectionHeading title="Get In Touch" subtitle="Let's work together" />
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start mt-12 sm:mt-16">
             <GlassmorphicCard>
